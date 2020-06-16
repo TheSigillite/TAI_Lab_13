@@ -23,9 +23,7 @@ import { SelectizeComponent } from './components/selectize/selectize.component';
 import { AddPostComponent } from './components/add-post/add-post.component';
 import { AuthService } from './services/auth/auth.service';
 import { AuthInterceptor } from './services/auth/auth.interceptor';
-import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
-import { AuthGuard } from './services/admin-guard.guard';
 
 @NgModule({
   declarations: [
@@ -45,7 +43,6 @@ import { AuthGuard } from './services/admin-guard.guard';
     FilterPipe,
     SelectizeComponent,
     AddPostComponent,
-    SignupComponent,
     LoginComponent
   ],
   imports: [
@@ -58,7 +55,6 @@ import { AuthGuard } from './services/admin-guard.guard';
   providers: [
     DataService,
     AuthService,
-    AuthGuard,
     {
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,

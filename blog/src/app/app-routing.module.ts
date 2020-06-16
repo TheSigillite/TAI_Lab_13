@@ -5,26 +5,23 @@ import { ContactComponent } from './components/contact/contact.component';
 import { BlogItemDetailsComponent } from './components/blog-item-details/blog-item-details.component';
 import { BlogHomeComponent } from './components/blog-home/blog-home.component';
 import { AddPostComponent } from './components/add-post/add-post.component';
-import { AuthGuard } from './services/admin-guard.guard';
 import { LoginComponent } from './components/login/login.component';
-import { SignupComponent } from './components/signup/signup.component';
 
 const routes: Routes = [
   {
-    path: "",
+    path: '',
     component: HomeComponent,
   },
   {
-    path: "contact",
+    path: 'contact',
     component: ContactComponent,
   },
   {
-    path: "blog",
+    path: 'blog',
     component: BlogHomeComponent,
-    canActivate: [AuthGuard],
   },
   {
-    path: "blog/detail/:id",
+    path: 'blog/detail/:id',
     component: BlogItemDetailsComponent,
   },
   {
@@ -32,11 +29,7 @@ const routes: Routes = [
     component: AddPostComponent,
   },
   {path: 'login',
-  component: LoginComponent},
-  {
-    path: 'signup',
-    component: SignupComponent,
-  }
+  component: LoginComponent}
 ];
 
 @NgModule({

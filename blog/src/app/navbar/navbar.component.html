@@ -8,9 +8,7 @@
 <li class="nav-item">
     <a class="nav-link" routerLink='/contact' >Kontakt</a>
 <li class="nav-item">
-    <a class="nav-link" routerLink="/login" *ngIf="!authService.isLoggedIn()">Zaloguj</a>
-<li class="nav-item">
-    <a class="nav-link" routerLink="/signup" *ngIf="!authService.isLoggedIn()">Zarejestruj</a>
+    <a class="nav-link" routerLink="/login" *ngIf="!authService.isUserLoggedIn()">Zaloguj</a>
 </li>
-    <button *ngIf="authService.isLoggedIn()" (click)="logOut()" class="dropdown-item">Wyloguj</button>
+    <button *ngIf="authService.isUserLoggedIn()" (click)="logOut()" class="dropdown-item">Wyloguj</button>
 </ul>
