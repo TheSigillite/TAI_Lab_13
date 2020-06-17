@@ -9,21 +9,18 @@ import { Router } from '@angular/router';
 })
 export class AddPostComponent implements OnInit {
 
-  public post = {
-    title: '',
-    url: '',
-    content: '',
+  public post: any;
+  constructor(private dataService: DataService, private router: Router) {
   }
-
-  constructor(private dataService: DataService, private router: Router) { }
 
   ngOnInit() {
   }
 
-  save() {
-    this.dataService.createOrUpdate(this.post).subscribe(f => {
-      this.router.navigate(['/blog'])
-    })
+  onSubmit() {
+    this.dataService.createPost(this.post).subscribe( (post) => {
+      this.router.navigate(['']);
+    });
   }
+
 
 }
