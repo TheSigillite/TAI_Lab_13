@@ -2,8 +2,15 @@ package com.example.TAI.post;
 
 import lombok.Data;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 @Data
+@Entity
 public class Post {
+    @Id
+    @GeneratedValue
     private long id;
     private String title;
     private String url;
